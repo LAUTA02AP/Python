@@ -1,0 +1,65 @@
+					Ejercicio 1
+ 
+Escribir un programa que calcule el promedio de una cantidad x de números ingresados.
+
+					Ejercicio 2 
+
+Mostrar todos los números impares menores de 100 
+
+					Ejercicio 3 
+
+Escribir  un  programa  que  muestre  los  números  pares  que  existen  entre  dos  números 
+ingresados. 
+
+
+					Ejercicio 4 
+
+Escribir  un  programa  que  pida  al  usuario  un  número  entero  y  muestre  por  pantalla  un 
+triángulo rectángulo como el de más abajo, de altura el número introducido. 
+* 
+** 
+*** 
+**** 
+***** 
+
+
+					Ejercicio 5 
+
+Escribir  un  programa  que  muestre  el  eco  de  todo  lo  que  el  usuario  introduzca  hasta  que  el 
+usuario escriba “salir” que terminará. 
+
+					Ejercicio 6 
+
+El  ISBN  o  “International  Standard  Book  Number”  es  un  número  de  10  dígitos  usado  para 
+identificación  de  libros,  cuyo  último  dígito  es  un  verificador  que  se  calcula  mediante  una 
+operación con los dígitos anteriores. 
+El dígito verificador es obtenido mediante el residuo de S para 11. 
+Donde  S  es  la  suma  de  una  vez  el  primer  dígito,  más  dos  veces  el  segundo  dígito,  mas  tres 
+veces el tercer dígito, . . . , más nueve veces el noveno dígito. 
+Escriba un algoritmo que lea un número ISBN y verifique si fue escrito de forma correcta.
+Ejemplo: 
+La suma S para el ISBN 9684443242 es: 
+1*9+2*6+3*8+4*4+5*4+6*4+7*3+8*2+9*4 = 178 
+El digito verificador es residuo(178/11) que es igual a 2. 
+
+
+					Ejercicio 7
+
+
+Una  fábrica  produce  botellas  de  vidrio  reciclando  botellas  usadas.  Suponiendo  botellas 
+similares, la máquina con X botellas usadas pueden fabricar 1 botella nueva. 
+Realice  un  algoritmo  para  encontrar  la  cantidad  total  acumulada  de  botellas  que  pueden 
+fabricarse  a  partir  de  N  botellas  en  el  mercado,  reciclándolas  repetidamente  hasta  que  ya  no 
+quede suficientes botellas para reciclar. 
+Por  ejemplo:  Si  n  =  70,  x  =  4,  la  respuesta  entregada  por  el  algoritmo  es  23  siguiendo  el 
+siguiente proceso: 
+Primer reciclaje: se fabrican 70/4 =17 botellas y sobran 2 
+Segundo reciclaje: n= 17 + 2 = 19, se fabrican 19/4 = 4 botellas y sobran 3 
+Tercer reciclaje: n= 4 + 3 =7, se fabrican 7/4 = 1 sobra 3 
+Cuarto  reciclaje:  n=1+3=4,  se  fabrican  4/4=1  botella  y  ya  no  quedan  suficientes  botellas 
+para reciclar. El algoritmo termina y muestra la cantidad acumulada. 
+Total de botellas fabricadas: 17 + 4 + 1 +1= 23
+
+
+
+
