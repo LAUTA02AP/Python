@@ -1,4 +1,4 @@
-import EjercicioArrays
+import EjercicioArrays, EjercicioMatriz
 def main():
     print("Resolucion de Activades de la Guia 12")
     
@@ -29,16 +29,16 @@ def main():
             EjercicioArrays.ejercicio3()
         elif numero == '4':
             print("\n---Actividad 4---")
-            pass
+            EjercicioMatriz.actividad4()
         elif numero == '5':
             print("\n---Actividad 5---")
-            pass
+            EjercicioMatriz.ejercicio5()
         elif numero == '6':
             print("\n---Actividad 6---")
-            pass
+            EjercicioMatriz.actividad6()
         elif numero == '7':
             print("\n---Actividad 7---")
-            pass
+            EjercicioMatriz.actividad7()
         elif numero == '8':
             print("\n---Actividad 8---")
             pass
