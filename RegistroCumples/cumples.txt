@@ -2,12 +2,12 @@ laura,lopez,11/6/2000,154178788,Laura@gmail.com,1
 juan,parejo,20/5/1995,154277021,Juan@gmail.com,1
 jaime,torres,30/7/1990,175351402,Jaimito@gmail.com,1
 elsa,martino,12/9/1950,4535152,elsita@gmail.com,1
-lautaro,pomba,23/12/2002,154271702,lauti@gmail.com,1
+lautaro,pomba,22/7/2002,154271702,lautaro2002ap@gmail.com,1
 cachito,puerredon,12/5/1918,no-tiene,no-tiene,0
 juana,perrone,23/5/1990,353421011,juanita21@gmail.com,1
 cachito,lara,5/6/1920,4535621,cachito@hotmail.com,1
 roberta,musso,23/5/1990,235689,roberta@gmail.com,1
 ricardo,puerredon,25/8/1993,2356415,ricardito@gmail.com,1
 susan,salvatierra,10/7/1998,3534754712,susanita@gmail.com,1
-Mateo,Rojas,22/7/1995,3534515102,mate@gmail.com,1
-Lara,Barrios,22/7/2000,5454210120,larita@gmail.com,1
+Mateo,Rojas,31/7/1995,3534515102,mate@gmail.com,1
+Lara,Barrios,26/7/2000,5454210120,larita@gmail.com,1

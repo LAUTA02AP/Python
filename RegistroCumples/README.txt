@@ -9,3 +9,7 @@ Este programa es un registro de cumpleaños que permite:
 -Calcular la edad de los contactos registrados
 
 Lo desarrollé con el objetivo de practicar el uso de la biblioteca datetime en Python.
+
+
+para el mail automatico es necesario intalarar:
+pip install secure-smtplib

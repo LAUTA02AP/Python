@@ -3,6 +3,10 @@ from Personas import Personas
 import tkinter as tk
 from tkinter import messagebox, font
 import winsound 
+from email.message import EmailMessage
+import smtplib
+
+
 
 gente =[]
 hoy = d.datetime.now()
@@ -25,7 +29,7 @@ def alerta_cumple(persona, edad):
     winsound.PlaySound("sound/tada.wav", winsound.SND_FILENAME | winsound.SND_ASYNC)
    
     root = tk.Tk()
-    root.title("🎉 ¡Cumpleaños Hoy! 🎂")
+    root.title("🎈¡Hoy hay cumpleaños !")
     root.geometry("350x150")
     root.configure(bg="#3E1F92") 
     root.eval('tk::PlaceWindow . center')
@@ -33,21 +37,19 @@ def alerta_cumple(persona, edad):
     fuente_titulo = font.Font(family="Helvetica", size=16, weight="bold")
     fuente_mensaje = font.Font(family="Helvetica", size=12)
 
-    titulo = tk.Label(root, text="¡Atención!", bg="#3E1F92", fg="#F9DC5C", font=fuente_titulo)
+    titulo = tk.Label(root, text="¡Aviso importante!", bg="#3E1F92", fg="#F9DC5C", font=fuente_titulo)
     titulo.pack(pady=(10, 5))
-    #mensaje
+    
     mensaje = f"{persona.nombre} {persona.apellido} cumple {edad} años hoy.\nNo olvides felicitarlo/a."
     etiqueta = tk.Label(root, text=mensaje, bg="#3E1F92", fg="#FFFFFF", font=fuente_mensaje, justify="center")
     etiqueta.pack(pady=5, padx=10)
 
-    # Botón para cerrar la ventana
     boton_cerrar = tk.Button(root, text="Cerrar", command=root.destroy, bg="#F9DC5C", fg="#3E1F92", font=fuente_mensaje)
     boton_cerrar.pack(pady=(10, 10))
     
     root.mainloop()
 
 def cumplehoy():
-    hoy = d.datetime.now()
     hoy_cumple = False
     for persona in gente:
         if Personas.isHabilitada(persona):
@@ -112,7 +114,6 @@ def agregar_persona():
         f.write(f"\n{nombre},{apellido},{fecha},{telefono},{mail},{estado}")
 
 def mostrar_todos_los_cumples():
-    hoy = d.datetime.now()
     cumples_proximos = []
 
     for persona in gente:
@@ -142,15 +143,75 @@ def mostrar_todos_los_cumples():
         print(f"-Faltan {persona.dias_para_cumple} días para su cumpleaños")
         
     
+def enviar_mail(remitente,contraseña):
+
+    for persona in gente:
+        if Personas.isHabilitada(persona):
+            cumple_persona = d.datetime.strptime(persona.fecha_cumple, "%d/%m/%Y")
+            if (hoy.month, hoy.day) == (cumple_persona.month, cumple_persona.day):
+        
+                mensaje = EmailMessage()
+                mensaje["Subject"] = f"🎈¡Feliz cumpleaños, {persona.nombre}!"
+                mensaje["From"] = remitente
+                mensaje["To"] = persona.mail
+
+                gif_url = "https://media4.giphy.com/media/1cUyeJNKERjwvrS4Yc/giphy.gif"
+
+                
+                html_content = f"""
+                
+                <html>
+                <body>
+                    <p>Hola {persona.nombre},</p>
+
+                    <p>Te deseamos un muy feliz cumpleaños!🥳🥳🥳<br>
+                    Que tengas un día increible lleno de alegría</p>
+                    
+                    <p>Gracias por ser parte de nuestra comunidad🤗🤗 <p>
+                    
+
+                    <img src="{gif_url}" alt="Feliz cumpleaños" width="400"><br><br>
+
+                    
+                    Atentamente,<br>
+                    Empresa X</p>
+                </body>
+                </html>
+                """
+                mensaje.add_alternative(html_content, subtype='html')
+
+                try:
+                    with smtplib.SMTP_SSL("smtp.gmail.com", 465) as smtp:
+                        smtp.login(remitente, contraseña)
+                        smtp.send_message(mensaje)
+                        print(f"✅ Correo enviado a {persona.nombre}")
+                except smtplib.SMTPAuthenticationError as e:
+                    if e.smtp_code == 535:
+                        print("\nError de autenticación: usuario o contraseña de aplicación incorrectos.")
+                        print("Verifica si ingresaste bien tu correo y usss una contraseña de aplicación valida.")
+                        print("Ayuda: https://support.google.com/mail/?p=BadCredentials")
+                    else:
+                        print(f"\nError de autenticación desconocido: {e}")
+                except Exception as e:
+                    print(f"\nError al enviar correo a {persona.nombre}: {e}")
+                    
+    
+    
+    
+#######################
+# MENUS
+######################    
 def main():
     cargar_cumples()
+    print("-----------------🎈REGISTROS DE CUMPLEAÑOS🎈-------------------")
     while True:
-        print("1 para ver si hoy hay cumpleaños")
+        print("\n1 para ver si hoy hay cumpleaños")
         print("2 para mostrar todos los cumpleaños registrados")
         print("3 para consultar el cumpleaños de una persona en especifico")
         print("4 ver los cumpleaños de este mes")
         print("5 desabilitar persona")
         print("6 agregar persona")
+        print("7 Mail automatico para los cumpleañeros")
         print("0 para salir")
         
         opcion = int(input("\nIngrese el número: "))
@@ -171,15 +232,18 @@ def main():
             remover_persona(nombre,apellido)
         elif opcion == 6:
             agregar_persona()
-        elif opcion == 7:
+        elif opcion ==7:
+            print("\nPara podes enviar el gmail automatico debera ingresar su correo")
+            print("y debera ingresar una contraseña generada desde el gestor de aplicaciones de Google")
+            print("la contra seria algo similar a esta 'abcd efgh ijkl mnop'\n")
+            
+            remitente=input("Por favor ingrese su gmail: ")
+            contaseña=input("Ingrese la contraseña de de aplicacion: ")
+            enviar_mail(remitente,contaseña)
+        elif opcion == 0:
             break
         else:
             print("ingrese una opcion valida")
 
 if __name__ == "__main__":
     main()
-
-
-
-# mensaje automatico al numero telefonico,ordenar cumpleanios(por fecha)
-#modificar formato de archivo (lo coloque asi debido a un  eroor en la lectura)
