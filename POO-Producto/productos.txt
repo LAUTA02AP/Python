@@ -1,0 +1,15 @@
+Coca Cola,800,50,30
+Pepsi,750,60,25
+Fanta,700,40,20
+Sprite,720,35,18
+7Up,710,30,15
+Monster,1200,20,10
+Speed,1000,25,12
+Red Bull,1500,10,9
+Agua Villavicencio,500,80,40
+Agua Eco de los Andes,480,70,35
+Gatorade,950,45,25
+Powerade,930,50,22
+Cepita Naranja,650,60,30
+Levité Limón,600,70,32
+Cerveza Quilmes,1000,100,50
