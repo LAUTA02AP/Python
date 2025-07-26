@@ -1,0 +1,28 @@
+39912453,Messi,Lionel,1,4,850,2,0
+26468577,Di María,Ángel,1,4,420,1,1
+36329146,Otamendi,Nicolás,2,4,25,3,0
+40874215,Dybala,Paulo,3,4,110,2,1
+42306584,Romero,Cristian,4,4,10,0,1
+43029390,De Paul,Rodrigo,5,4,40,4,0
+28579234,Paredes,Leandro,3,4,35,2,0
+26578937,Lo Celso,Giovani,2,4,50,2,1
+37304591,Gómez,Juan,1,1,6,4,1
+30931289,Pérez,Carlos,2,1,7,3,2
+20787262,Rodríguez,Luis,3,1,15,5,0
+33011720,Fernández,Pedro,4,1,10,4,1
+22678190,López,Tomás,5,1,3,3,1
+44643392,Martínez,Franco,1,2,4,2,2
+24169009,Díaz,Luciano,2,2,0,1,0
+22529539,Sosa,Santiago,3,2,12,4,1
+23057304,Romero,Agustín,4,2,13,0,2
+30017200,Castro,Matías,5,2,5,2,0
+30592116,Gómez,Juan,1,3,1,2,2
+34614916,Pérez,Carlos,2,3,14,4,2
+24549412,Rodríguez,Luis,3,3,11,1,1
+30411898,Fernández,Pedro,4,3,9,5,0
+31464482,López,Tomás,5,3,3,4,2
+37585389,Martínez,Franco,1,5,7,3,0
+45459733,Díaz,Luciano,2,5,4,3,2
+26588056,Sosa,Santiago,3,5,8,2,1
+40152062,Romero,Agustín,4,5,10,2,1
+42286021,Castro,Matías,5,5,6,4,2
